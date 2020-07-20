@@ -2,7 +2,7 @@
 
 This repository contains the Docker files and setup that I use to work with the LSST stack within Docker. The repository contains two directories. The "standard" directory contains the files needed to create and run the standard LSST Docker image and container. The "jupyter" directory contains the files needed to add Jupyter notebook functionality to the standard Docker container. The latter builds on "standard" Docker image, so if you want Jupyter functionality, you'll need to build the standard Docker image first.
 
-The Docker containers assume certain user priveleges. To ensure these, you'll need to provide your group and user ids when building the system/Dockerfile. To build the docker images:
+The Docker containers assume certain user priveleges. To ensure these, you'll need to provide your group and user ids when building the "standard" docker image. To do that:
 ```
 >> cd standard
 >> docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t lsst:18_1_0 .
