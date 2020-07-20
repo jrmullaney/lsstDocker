@@ -1,0 +1,18 @@
+# User specific aliases and functions
+# Set up EUPS by sourcing loadLSST.bash
+source /opt/lsst/software/stack/loadLSST.bash
+echo "EUPS setup"
+
+# Set up obs_goto and UCAC4:
+eups declare astrometry_net_data ucac4 -r /opt/lsst/software/stack/stack/current/Linux64/astrometry_net_data/UCAC4_goto
+echo "UCAC4 declared"
+eups declare obs_goto v1 -r /opt/lsst/software/stack/stack/current/Linux64/obs_goto
+eups declare -t current obs_goto v1
+echo "obs_goto declared"
+
+#Export display variables
+export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
+export XDG_RUNTIME_DIR=/tmp/runtime-lsst
+
+# Change prompt:
+PS1="LSSTStack> "
